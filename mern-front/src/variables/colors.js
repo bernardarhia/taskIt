@@ -1,0 +1,5 @@
+const TASK_IT_BACKGROUND = "EFEFEF"
+
+
+
+export {TASK_IT_BACKGROUND}

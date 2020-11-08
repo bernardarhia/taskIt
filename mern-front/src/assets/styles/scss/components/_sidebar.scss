@@ -1,0 +1,38 @@
+.sidebar{
+    padding: 5rem 0 0 0;
+    &__nav{
+        display: flex;
+        height: 90%;
+        align-items: center;
+        flex-direction: column;
+        .sidebar__list{
+            margin: 1rem 0;
+           width: 100%;
+           transition:.3s ease;
+           border-right: 2px solid transparent;
+           &:hover{
+               background: hsla(22, 100%, 50%, 0.157);
+               border-right: 3px solid #ff5e00;
+           }
+           &:hover a{
+               color: hsla(22, 100%, 50%, 0.972);
+           }
+           a{  
+               color: #3F3E3E;
+               font-size: 18px;
+               font-weight: 500;
+               display:flex;
+               align-items: center;
+               width: 100%;
+               padding:1rem 0 1rem 4rem;
+               transition:.3s ease;
+            span{
+                display: inline-block;
+                padding-right: 1rem;
+            }
+
+           }
+        }
+
+    }
+}

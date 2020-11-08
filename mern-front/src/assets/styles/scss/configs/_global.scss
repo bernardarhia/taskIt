@@ -1,0 +1,34 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    line-height: 1.2;
+    font-family: sans-serif;
+}
+
+body, html{
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    background-color: #faf9f9;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffffff9b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(53, 40, 231);
+    border-radius: 1rem;
+  }
