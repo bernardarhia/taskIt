@@ -8,7 +8,6 @@ import { useHistory } from "react-router";
 import { getToken } from "../../context/checkUser";
 import UserContext from "../../context/userContext";
 import Button from "../../components/Button";
-import UserInfo from "./UserInfo";
 const Home = () => {
   const { user, setUser } = useContext(UserContext);
   let history = useHistory();
@@ -32,7 +31,7 @@ const Home = () => {
     window.location.replace('/login');
     return;
   }
-
+console.log(user);
   return (
     <>
       <View>
@@ -67,7 +66,7 @@ const Home = () => {
             }}
           >
             <Header></Header>
-          <UserInfo />
+            <h1>Welcome {user.user.username}</h1>
           </Content>
         </Screen>
       </View>
