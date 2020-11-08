@@ -5,6 +5,7 @@ import Axios from "axios";
 import Loader from "../../components/Loader";
 import { Link } from "react-router-dom";
 import ProjectPortal from "../../components/ProjectPortal";
+import UserContext from "../../context/userContext";
 
 
 const Login = () => {
@@ -13,6 +14,8 @@ const Login = () => {
   const [error, setError] = useState(undefined);
   const [loading, setLoading] = useState(false);
 const [disabled, setDisabled] = useState(false)
+const { user, setUser } = useContext(UserContext);
+
   const userData = {
     email,
     password,
@@ -32,10 +35,10 @@ console.log(user.data);
       if (user.data) {
         localStorage.setItem("auth-token", user.data);
           const userRes = await Axios.get("http://localhost:3000/api/users", {
-            headers: { "auth-token": token },
+            headers: { "auth-token": user.data },
           });
           setUser({
-            token,
+            token:user.data,
             user: userRes.data,
           });
           setTimeout(() => {
