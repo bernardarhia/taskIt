@@ -59,7 +59,7 @@ function App() {
     };
 
     checkUserLogIn();
-  }, []);
+  });
   return (
     <>
       <Router>

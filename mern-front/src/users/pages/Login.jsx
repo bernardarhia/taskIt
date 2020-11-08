@@ -28,13 +28,21 @@ const [disabled, setDisabled] = useState(false)
         "https://task-it-backend.herokuapp.com/api/users/login",
         userData
       );
-
+console.log(user.data);
       if (user.data) {
         localStorage.setItem("auth-token", user.data);
-        setTimeout(() => {
-          window.location.replace("/");
-        }, 3000);
-      }
+          const userRes = await Axios.get("http://localhost:3000/api/users", {
+            headers: { "auth-token": token },
+          });
+          setUser({
+            token,
+            user: userRes.data,
+          });
+          setTimeout(() => {
+            window.location.replace("/");
+          }, 3000);
+        }
+        
     } catch (error) {
       if (error.response.data.err) {
         setLoading(false);
