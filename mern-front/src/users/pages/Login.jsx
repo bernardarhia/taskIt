@@ -31,7 +31,6 @@ const [disabled, setDisabled] = useState(false)
 
       if (user.data) {
         localStorage.setItem("auth-token", user.data);
-        console.log(user.data);
         setTimeout(() => {
           window.location.replace("/");
         }, 3000);
